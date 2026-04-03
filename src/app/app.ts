@@ -1,8 +1,6 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
-const unusedVariable = "test"
-
 @Component({
   selector: 'app-root',
   imports: [RouterOutlet],
