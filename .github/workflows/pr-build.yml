@@ -7,6 +7,7 @@ on:
 
 jobs:
   lint:
+    name: Lint Check
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -18,6 +19,7 @@ jobs:
       - run: npm run lint
 
   test:
+    name: Test Check
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -29,6 +31,8 @@ jobs:
       - run: npm test -- --watch=false --browsers=ChromeHeadless
 
   build:
+    name: Build Check
+    needs: [lint, test]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
